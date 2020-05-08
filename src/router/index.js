@@ -1,49 +1,37 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-Vue.use(Router)
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-import Home from './../pages/Home.vue'
-import Aritice from './../pages/Aritice.vue'
-import types from './../pages/types.vue'
-import Classification from './../pages/Classification'
-import Journal from './../pages/journal'
+Vue.use(VueRouter);
 
-export default new Router({
-  routes: [
+const routes = [
     {
-      path:'/home',
-      name:'首页',
-      component:Home
+      path: '/',
+      redirect: '/home'
     },
     {
-      path:'/',
-      redirect:'/home'
+      path: '/home',
+      name: 'home',
+      component: () => import('@/views/index.vue')
     },
     {
-      path:'/aritice/:id',
-      name:'详情',
-      component:Aritice,
-      meta:{
-        UNkeepAlive:true
-      }
+      path: '/detail',
+      name: 'detail',
+      component: () => import('@/views/detail.vue')
     },
     {
-      path:'/types',
-      name:'分类',
-      component:types
-    },
-    {
-      path:'/journal',
-      name:'日志',
-      component:Journal
-    },
-    {
-      path:'/Classification/:tagId',
-      name:'Classification',
-      component:Classification,
-      meta:{
-        UNkeepAlive:true
-      }
-    },
-  ]
-})
+      path: '/classify',
+      name: 'classify',
+      component: () => import('@/views/classify.vue')
+    }
+  ],
+  router = new VueRouter({
+    routes,
+    mode: 'history',
+    // eslint-disable-next-line no-unused-vars
+    scrollBehavior(to, from, savedPosition) {
+      // return 期望滚动到哪个的位置
+      return { y: 0, x: 0 };
+    }
+  });
+
+export default router;

@@ -1,25 +1,19 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
-import router from './router'
-import elementUi from 'element-ui'
-import 'highlight.js/styles/atelier-lakeside-dark.css'
-import 'quill/dist/quill.core.css'
-import 'quill/dist/quill.snow.css'
-import 'quill/dist/quill.bubble.css'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import '@/assets/scss/index.scss';
+import mavonEditor from 'mavon-editor';
+import svgIcon from '@/components/svgIcon';
 
-Vue.config.productionTip = false
+Vue.component('svg-icon', svgIcon);
 
-Vue.use(elementUi)
-
-/* Vue.prototype.$axios = axios
- */
-import 'element-ui/lib/theme-chalk/index.css'
-/* eslint-disable no-new */
+Vue.config.productionTip = false;
+Vue.use(ElementUI).use(mavonEditor);
 new Vue({
-  el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
-})
+  store,
+  render: (h) => h(App)
+}).$mount('#app');

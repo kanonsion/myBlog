@@ -1,0 +1,35 @@
+/* 超出隐藏 */
+@mixin ellipsis($rowCount: 1) {
+  @if $rowCount <=1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $rowCount;
+    -webkit-box-orient: vertical;
+  }
+}
+
+/* flex */
+@mixin flex($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+/* h5 px/2 */
+@function px($px) {
+  @return $px / 2 * 1px;
+}
+
+
+/* shadow */
+@mixin shadow() {
+  transition: all 0.5s linear;
+  box-shadow: 0 10px 0 $shoadowColor;
+}
