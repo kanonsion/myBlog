@@ -22,6 +22,16 @@ const routes = [
       path: '/classify',
       name: 'classify',
       component: () => import('@/views/classify.vue')
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('@/views/about.vue')
+    },
+    {
+      path: '/message',
+      name: 'message',
+      component: () => import('@/views/message.vue')
     }
   ],
   router = new VueRouter({
@@ -30,7 +40,7 @@ const routes = [
     // eslint-disable-next-line no-unused-vars
     scrollBehavior(to, from, savedPosition) {
       // return 期望滚动到哪个的位置
-      return { y: 0, x: 0 };
+      return { y: 500, x: 0 };
     }
   });
 

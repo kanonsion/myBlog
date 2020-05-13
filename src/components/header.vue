@@ -90,7 +90,8 @@ export default {
       menu: [
         { path: '/home', name: '首页' },
         { path: '/types', name: '分类', dropdown: true },
-        { path: '#', name: '关于' }
+        { path: '/about', name: '留言' },
+        { path: '/about', name: '关于' }
       ],
       tags: [],
       tag: '欢迎来到我的博客',
@@ -128,7 +129,9 @@ export default {
     this._getTags();
   },
   mounted() {
-    init();
+    setTimeout(() => {
+      init();
+    }, 99999);
   },
   watch: {
     $route(val) {
