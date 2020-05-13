@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseURL = 'http://123.57.189.47:3003/';
+const baseURL = process.env.VUE_APP_URL;
 const baseName = '';
 
 axios.defaults.baseURL = baseURL + baseName;

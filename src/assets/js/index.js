@@ -1,7 +1,7 @@
 import axios from './axios';
 
 export function getAritice(params) {
-  return axios.post('/api/aritice/list', params);
+  return axios.post('/api/aritice', params);
 }
 
 export function getTags() {
