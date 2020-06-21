@@ -2,7 +2,7 @@
   <div id="app" ref="app" :class="{ app: isOpen }">
     <my-header :header="header" @open="open" />
     <router-view class="slide animate03"> </router-view>
-    <quick-tab :quick="quick" @goTop="goTop" />
+    <quick-tab :quick="quick"  @goTop="goTop" />
     <my-footer />
   </div>
 </template>
