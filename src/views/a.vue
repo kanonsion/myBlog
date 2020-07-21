@@ -1,10 +1,13 @@
 <template>
-    <div>1212121212ddssdsds1</div>
+    <div>撒倒萨倒萨倒萨倒萨小程序</div>
 </template>
 
 <script>
     export default {
-        name: "a"
+        name: "a",
+        data() {
+            return {}
+        }
     }
 </script>
 
